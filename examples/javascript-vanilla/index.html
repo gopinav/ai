@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Streaming OpenAI API Completions in JavaScript</title>
+    <script type="module" src="stream-response.js"></script>
   </head>
   <body
     class="bg-white text-black min-h-screen flex items-center justify-center"
   >
-    <div class="p-8 rounded-md bg-gray-100">
+    <div class="lg:w-1/2 2xl:w-1/3 p-8 rounded-md bg-gray-100">
       <h1 class="text-3xl font-bold mb-6">
         Streaming OpenAI API Completions in JavaScript
       </h1>
@@ -27,13 +28,14 @@
       <div class="flex justify-center mt-4">
         <button
           id="generateBtn"
-          class="w-1/2 px-4 py-2 rounded-md bg-black text-white hover:bg-gray-900 focus:outline-none mr-2"
+          class="w-1/2 px-4 py-2 rounded-md bg-black text-white hover:bg-gray-900 focus:outline-none mr-2 disabled:opacity-75 disabled:cursor-not-allowed"
         >
           Generate
         </button>
         <button
           id="stopBtn"
-          class="w-1/2 px-4 py-2 rounded-md border border-gray-500 text-gray-500 hover:text-gray-700 hover:border-gray-700 focus:outline-none ml-2"
+          disabled
+          class="w-1/2 px-4 py-2 rounded-md border border-gray-500 text-gray-500 hover:text-gray-700 hover:border-gray-700 focus:outline-none ml-2 disabled:opacity-75 disabled:cursor-not-allowed"
         >
           Stop
         </button>
