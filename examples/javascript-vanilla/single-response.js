@@ -16,6 +16,12 @@ const resultText = document.getElementById("resultText");
 let controller = null; // Store the AbortController instance
 
 const generate = async () => {
+  // Alert the user if no prompt value
+  if (!promptInput.value) {
+    alert("Please enter a prompt.");
+    return;
+  }
+
   // Disable the generate button and enable the stop button
   generateBtn.disabled = true;
   stopBtn.disabled = false;
@@ -67,5 +73,10 @@ const stop = () => {
   }
 };
 
+promptInput.addEventListener("keyup", (event) => {
+  if (event.key === "Enter") {
+    generate();
+  }
+});
 generateBtn.addEventListener("click", generate);
 stopBtn.addEventListener("click", stop);
